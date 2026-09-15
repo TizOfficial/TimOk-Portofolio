@@ -13,7 +13,7 @@ const portfolio = {
   skills: [
     { icon: "H", name: "HTML", description: "Struktur für Ideen, Seiten und kleine digitale Orte.", status: "Lerne und nutze ich aktiv", color: "#f4a27d" },
     { icon: "C", name: "CSS", description: "Für Layout, Details und die Stimmung eines Projekts.", status: "Aktuell im Fokus", color: "#8fbaff" },
-    { icon: "JS", name: "JavaScript", description: "Damit aus einer Seite etwas wird, das reagiert und lebt.", status: "Grundkenntnisse & eigene Projekte", color: "#f5dc73" },
+  /*  { icon: "JS", name: "JavaScript", description: "Damit aus einer Seite etwas wird, das reagiert und lebt.", status: "Grundkenntnisse & eigene Projekte", color: "#f5dc73" }, */
     { icon: "Py", name: "Python", description: "Zum Ausprobieren, Automatisieren und Weiterdenken.", status: "Neugierig am Vertiefen", color: "#a9d9a3" },
   ],
   // Replace these placeholders with actual projects whenever one is ready.
@@ -28,11 +28,11 @@ const portfolio = {
     { title: "Dieses Portfolio weiterfüllen", detail: "mit Dingen, die wirklich von mir sind", state: "läuft" },
   ],
   journey: [
-    { year: "Start", title: "Mit dem Programmieren angefangen", detail: "Neugier, erste Tutorials und ganz viele Fragen." },
-    { year: "Danach", title: "Erste eigene Webseiten erstellt", detail: "Nicht perfekt – aber selbst gemacht und online gedacht." },
-    { year: "Next", title: "JavaScript gelernt", detail: "Erste Interaktionen und die Freude daran, wenn Dinge reagieren." },
+    { year: "2022", title: "Mit dem Programmieren angefangen", detail: "Neugier, erste Tutorials und ganz viele Fragen." },
+    { year: "2026", title: "Erste eigene Webseiten erstellt", detail: "Nicht perfekt – aber selbst gemacht und online gedacht." },
+   /* { year: "Next", title: "JavaScript gelernt", detail: "Erste Interaktionen und die Freude daran, wenn Dinge reagieren." },
     { year: "Jetzt", title: "Python ausprobiert", detail: "Neue Wege entdecken und über den Browser hinausdenken." },
-    { year: "Weiter", title: "Eigene größere Projekte entwickeln", detail: "Ideen mehr Raum geben, bauen und daraus lernen." },
+    { year: "Weiter", title: "Eigene größere Projekte entwickeln", detail: "Ideen mehr Raum geben, bauen und daraus lernen." }, */
   ],
   // Add real URLs here. For Discord, use the personal profile URL — never a server invite (see discordUrl above).
   socials: [
