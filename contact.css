@@ -1,0 +1,13 @@
+/* Contact form: Discord-styled inputs. */
+.contact-form { display: grid; gap: 14px; margin-top: 6px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.contact-form label { display: grid; gap: 7px; color: var(--dc-text-3); font: .62rem var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--dc-border); border-radius: 6px; outline: 0; resize: vertical; padding: 11px 12px; background: var(--dc-input); color: var(--dc-text); font: 400 .86rem var(--sans); letter-spacing: 0; text-transform: none; transition: border-color .15s, background .15s; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--dc-text-3); }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--dc-blurple); background: #232428; }
+.form-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.send-button { display: inline-flex; align-items: center; gap: 9px; border: 0; border-radius: 6px; padding: 11px 15px; background: var(--dc-blurple); color: #fff; font: 700 .78rem var(--sans); cursor: pointer; transition: background .15s, transform .15s; }
+.send-button:hover { background: var(--dc-blurple-hover); transform: translateY(-1px); }
+.form-status { margin: 0; color: var(--dc-text-2); font: .7rem var(--mono); line-height: 1.4; }
+.form-status.error { color: #f4aa9a; }
+@media (max-width: 760px) { .form-row { grid-template-columns: 1fr; } }

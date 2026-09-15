@@ -1,0 +1,157 @@
+:root{
+  --dc-bg:#1e1f22;
+  --dc-float:#2b2d31;
+  --dc-float-2:#313338;
+  --dc-float-3:#383a40;
+  --dc-hover:#3f4147;
+  --dc-border:#111214;
+  --dc-input:#1e1f22;
+  --dc-text:#f2f3f5;
+  --dc-text-2:#b5bac1;
+  --dc-text-3:#80848e;
+  --dc-blurple:#5865f2;
+  --dc-blurple-hover:#4752c4;
+  --dc-green:#23a55a;
+  --dc-lime:#b9f48d;
+  --mono:"DM Mono",monospace;
+  --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--dc-bg);color:var(--dc-text);font-family:var(--sans);font-size:16px;overflow-x:hidden}
+::-webkit-scrollbar{width:14px}
+::-webkit-scrollbar-thumb{background:var(--dc-bg);border:3px solid transparent;border-radius:8px;background-clip:content-box}
+::-webkit-scrollbar-track{background:var(--dc-bg)}
+.shell{width:min(1000px,calc(100% - 40px));margin-inline:auto}
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:30;background:transparent}
+.scroll-progress span{display:block;width:0;height:100%;background:var(--dc-blurple);transition:width .08s linear}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(30,31,34,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--dc-border)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{color:var(--dc-text);font-weight:800;font-size:1.05rem;letter-spacing:-.04em;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+.brand-badge{width:30px;height:30px;border-radius:50%;background:var(--dc-float-3);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;flex:none}
+.brand-badge img{width:100%;height:100%;object-fit:cover;display:block}
+.brand i{width:8px;height:8px;border-radius:50%;background:var(--dc-green);display:inline-block;margin-left:-3px;border:2px solid var(--dc-bg)}
+.nav-links{display:flex;gap:6px}
+.nav-links a{color:var(--dc-text-2);text-decoration:none;font-size:.85rem;padding:7px 12px;border-radius:6px;transition:background .15s,color .15s}
+.nav-links a:hover{color:var(--dc-text);background:var(--dc-float-2)}
+.nav-links a.active{color:#fff;background:var(--dc-float-2)}
+.nav-discord{color:#fff !important;background:var(--dc-blurple);font-weight:600}
+.nav-discord:hover{background:var(--dc-blurple-hover) !important}
+.hero{padding:44px 0 70px;display:flex;justify-content:center}
+
+/* Discord user profile popout */
+.profile-card{width:min(560px,100%);background:var(--dc-float);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.5),0 0 0 1px var(--dc-border)}
+.banner{height:132px;background:linear-gradient(130deg,#5865f2,#7c6ff5 48%,#b9f48d);position:relative}
+.avatar-wrap{position:relative;width:60px;height:60px;margin:-34px 18px 0}
+.avatar{width:60px;height:60px;border-radius:50%;object-fit:cover;background:var(--dc-float)}
+.avatar-wrap .status-dot{position:absolute;right:-3px;bottom:-3px;width:18px;height:18px;border-radius:50%;background:var(--dc-green);border:5px solid var(--dc-float)}
+.profile-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:12px 18px 4px}
+.username{font-size:1.45rem;font-weight:800;line-height:1.15;margin:0;letter-spacing:-.02em}
+.handle{color:var(--dc-text-3);font-size:.9rem;display:inline-flex;align-items:center;gap:3px}
+.handle .hash{color:var(--dc-text-3)}
+.profile-status{padding:6px 18px 14px}
+.status-pill{display:inline-flex;align-items:center;gap:8px;color:var(--dc-text-2);background:var(--dc-float-3);border-radius:8px;padding:6px 11px;font-size:.82rem}
+.status-pill i{width:9px;height:9px;border-radius:50%;background:var(--dc-green)}
+.profile-divider{height:1px;background:var(--dc-float-3);margin:0 18px}
+.profile-subtitle{display:flex;align-items:center;gap:7px;padding:16px 18px 4px;color:var(--dc-text-3);font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;font-family:var(--mono)}
+.profile-subtitle .subtitle-icon{color:var(--dc-blurple)}
+.about-box{margin:8px 18px 0;border:1px solid var(--dc-float-3);border-radius:8px;padding:11px 13px}
+.about-box p{margin:0;color:var(--dc-text-2);font-size:.88rem;line-height:1.5}
+.member-since{padding:6px 18px 0;color:var(--dc-text-2);font-size:.88rem}
+.profile-actions{display:flex;flex-wrap:wrap;gap:9px;padding:18px}
+.dc-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:6px;padding:9px 13px;font-size:.84rem;font-weight:600;text-decoration:none;color:#fff;background:var(--dc-blurple);transition:background .15s}
+.dc-button:hover{background:var(--dc-blurple-hover)}
+.dc-button.primary{background:var(--dc-blurple)}
+.dc-button.secondary,.dc-button{background:var(--dc-float-3)}
+.dc-button.secondary:hover,.dc-button:hover{background:var(--dc-hover)}
+
+/* Discord channel sections */
+.dc-section{padding:26px 0}
+.dc-card{background:var(--dc-float);border-radius:10px;box-shadow:0 0 0 1px var(--dc-border);overflow:hidden}
+.dc-card-head{display:flex;align-items:center;gap:8px;padding:13px 18px;border-bottom:1px solid var(--dc-border);color:var(--dc-text-2);font-size:.9rem;font-weight:500}
+.dc-card-head .dc-hash{color:var(--dc-blurple);font-weight:600}
+.dc-card-body{padding:22px 22px 26px}
+.dc-card-body h2{font-size:1.7rem;line-height:1.15;letter-spacing:-.02em;margin:4px 0 18px}
+.dc-card-body h2 em,.dc-eyebrow,.live-label{color:var(--dc-blurple);font-style:normal}
+.dc-eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;margin:0 0 4px;color:var(--dc-text-3)}
+.dc-card-body>p{color:var(--dc-text-2);line-height:1.6;margin:10px 0}
+.dc-lead{max-width:520px}
+.text-link{color:var(--dc-blurple);text-decoration:none;font-weight:600}
+.text-link span{transition:transform .2s;display:inline-block}
+.text-link:hover span{transform:translateX(3px)}
+.live-label{display:inline-flex;align-items:center;gap:6px;margin-left:10px;font-size:.72rem;color:var(--dc-lime);font-family:var(--mono);letter-spacing:.05em}
+.live-label i{width:8px;height:8px;border-radius:50%;background:var(--dc-lime);box-shadow:0 0 8px var(--dc-lime)}
+
+/* skills as discord roles */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}
+.role-card{background:var(--dc-float-2);border-radius:8px;padding:15px;border:1px solid var(--dc-border);display:flex;gap:13px;align-items:flex-start}
+.role-icon{flex:none;width:42px;height:42px;border-radius:8px;background:var(--c,#5865f2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
+.role-card h3{margin:0 0 4px;font-size:1rem}
+.role-card p{margin:0 0 9px;color:var(--dc-text-2);font-size:.82rem;line-height:1.45}
+.role-status{display:inline-flex;align-items:center;gap:6px;color:var(--dc-text-3);font-size:.72rem;font-family:var(--mono)}
+.role-status i{width:7px;height:7px;border-radius:50%;background:var(--c,#5865f2)}
+
+/* projects as discord embeds */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:6px}
+.embed{display:flex;background:var(--dc-float-2);border:1px solid var(--dc-border);border-radius:8px;overflow:hidden}
+.embed-line{flex:none;width:4px;background:var(--accent,#5865f2)}
+.embed-content{padding:14px 16px;flex:1;min-width:0}
+.embed-type{color:var(--accent,#b5bac1);font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase}
+.embed-content h3{margin:5px 0 6px;font-size:1.08rem;letter-spacing:-.01em}
+.embed-content p{margin:0 0 11px;color:var(--dc-text-2);font-size:.84rem;line-height:1.5}
+.embed-fields{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.embed-actions{display:flex;gap:8px;flex-wrap:wrap}
+.embed-actions .card-button{background:none;border:1px solid var(--dc-hover);color:#fff;border-radius:6px;padding:7px 11px;font-size:.78rem;cursor:pointer;transition:background .15s}
+.embed-actions .card-button:hover{background:var(--dc-hover)}
+.tag, .dialog-tags .tag{background:#232428;color:var(--dc-text-2);border:1px solid var(--dc-hover);border-radius:4px;padding:2px 8px;font-size:.68rem;font-family:var(--mono)}
+.project-hint{color:var(--dc-text-3);font-size:.78rem;margin-top:16px}
+.project-hint code{color:var(--dc-text-2);background:var(--dc-float-2);padding:1px 5px;border-radius:4px}
+
+/* building list */
+.building-list{margin-top:6px;border:1px solid var(--dc-border);border-radius:8px;overflow:hidden}
+.build-item{display:flex;align-items:center;gap:14px;padding:12px 15px;background:var(--dc-float-2)}
+.build-item+.build-item{border-top:1px solid var(--dc-border)}
+.build-item .marker{flex:none;color:var(--dc-blurple);font-family:var(--mono);font-size:.72rem}
+.build-item strong{display:block;font-size:.9rem}
+.build-item small{color:var(--dc-text-3);font-size:.76rem}
+.build-item>span:last-child{flex:none;margin-left:auto;color:var(--dc-lime);font-size:.72rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.03em}
+
+/* journey timeline */
+.journey-list{list-style:none;padding:0;margin:8px 0 0}
+.journey-item{display:grid;grid-template-columns:90px 1fr 24px;gap:16px;align-items:center;padding:15px 6px;border-left:2px solid var(--dc-float-3);position:relative}
+.journey-item::before{content:"";position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:10px;height:10px;border-radius:50%;background:var(--dc-blurple);box-shadow:0 0 0 3px var(--dc-float)}
+.journey-year{color:var(--dc-text-3);font-family:var(--mono);font-size:.7rem;text-transform:uppercase}
+.journey-item h3{margin:0 0 3px;font-size:.98rem}
+.journey-item p{margin:0;color:var(--dc-text-2);font-size:.82rem;line-height:1.45}
+.journey-arrow{color:var(--dc-text-3)}
+
+/* contact */
+.social-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.social-link{color:var(--dc-text-2);background:var(--dc-float-2);border:1px solid var(--dc-border);text-decoration:none;border-radius:6px;padding:8px 12px;font-size:.84rem;font-weight:600;transition:background .15s,color .15s}
+.social-link:hover{background:var(--dc-hover);color:#fff}
+.dialog-note{color:var(--dc-text-3);font-size:.8rem}
+.footer{border-top:1px solid var(--dc-border);margin-top:40px;padding:26px 0 40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:var(--dc-text-3);font-size:.82rem}
+.footer .brand{color:var(--dc-text-2)}
+.footer>div{display:flex;gap:16px}
+.footer a{color:var(--dc-text-3);text-decoration:none}
+.footer a:hover{color:var(--dc-text)}
+.footer .brand:hover{color:var(--dc-text)}
+
+/* dialog */
+.project-dialog{background:var(--dc-float);color:var(--dc-text);border:1px solid var(--dc-border);border-radius:10px;padding:26px;width:min(480px,calc(100% - 40px));box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.project-dialog::backdrop{background:rgba(0,0,0,.65)}
+.dialog-close{position:absolute;top:12px;right:12px;background:var(--dc-hover);border:0;color:#fff;width:30px;height:30px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+.project-dialog .eyebrow{color:var(--dc-blurple);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;margin:0 0 4px}
+.project-dialog h2{margin:0 0 10px;font-size:1.4rem}
+.project-dialog p:not(.eyebrow):not(.dialog-note){color:var(--dc-text-2);line-height:1.55}
+.dialog-tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media (max-width:760px){
+  .journey-item{grid-template-columns:70px 1fr 20px}
+  .nav-links{gap:2px}
+  .nav-links a{padding:6px 9px;font-size:.8rem}
+  .profile-card{border-radius:8px}
+}
